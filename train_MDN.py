@@ -35,6 +35,7 @@ def train_nn(training_input,
             #output_activation='softmax',
             learning_rate,
             regularizer,
+            epochs,
             #momentum=0.4,
             #batch=60,
             #min_epochs=10,
@@ -105,10 +106,10 @@ def train_nn(training_input,
 #================================== Define the network layers ===================================================
 
     inputs = Input(shape=(60,))
-    print('structure', structure)
-    h = Dense(structure[0], activation='relu', W_regularizer=l2(regularizer))(inputs)
+    #print('structure', structure)
+    h = Dense(structure[0], activation='relu', kernel_regularizer=l2(regularizer))(inputs)
     for l in range (0, len(structure)-1):
-        h = Dense(structure[l+1], activation='relu', W_regularizer=l2(regularizer))(h)
+        h = Dense(structure[l+1], activation='relu', kernel_regularizer=l2(regularizer))(h)
 
 
 #================================== Build the model =============================================================
@@ -141,7 +142,7 @@ def train_nn(training_input,
         x=x_train,  #tranning_data[0],
         y=target_values, #[y_train[:,0:2], y_train[:,2:4]],  #tranning_data[1],
         batch_size=100,
-        epochs=5,
+        epochs=epochs,
         #validation_data=valid_data,
         validation_split=0.1,
         callbacks=[
@@ -280,6 +281,7 @@ def _main():
         help= 'learning rate')
     parse.add_argument('--regularizer', type=float, default=0.0001,
         help= 'l2 regularization value')
+    parse.add_argument('--epochs', type=int, default=5)
     #parse.add_argument('--momentum', type=float, default=0.4)
     #parse.add_argument('--batch', type=int, default=1)
     #parse.add_argument('--min-epochs', type=int, default=10)
@@ -301,6 +303,7 @@ def _main():
         args.structure,
         args.learning_rate,
         args.regularizer,
+        args.epochs,
         #args.momentum,
         #args.batch,
         ##args.min_epochs,
