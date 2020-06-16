@@ -151,6 +151,8 @@ def train_nn(training_input,
             keras.callbacks.ModelCheckpoint(training_output+'/'+outFile+'.h5', verbose=1, save_best_only=True),
             loss_record
         ],
+        use_multiprocessing=True,
+        workers=8,
         verbose=2
     )
     output_location = training_output+'/'+outFile+'_'+datetime.datetime.now().strftime('%m_%d_%H%M')

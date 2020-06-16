@@ -1,6 +1,9 @@
 """ eval_nn: module to evaluate a dataset using a neural network """
 
 import argparse
+import os
+os.environ['KERAS_BACKEND'] = 'tensorflow'
+import tensorflow as tf
 
 from keras.callbacks import ModelCheckpoint
 #from keras.layers.core import Dense, Activation
@@ -13,9 +16,9 @@ from keras_utils import Sigmoid, Profile, ThresholdEarlyStopping
 import root_utils
 import utils
 
-import theano
 import matplotlib.pyplot as plt
-from theano import tensor as T, function, printing
+
+#from theano import tensor as T, function, printing
 
 
 np.random.seed(12122)

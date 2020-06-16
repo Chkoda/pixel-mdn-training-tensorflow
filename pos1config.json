@@ -59,39 +59,9 @@ inputs:
   - NN_barrelEC
   - NN_phi
   - NN_theta
-  - NN_position_id_X_0_pred
-  - NN_position_id_Y_0_pred
 targets:
-  - NN_error_Y_0_0
-  - NN_error_Y_0_1
-  - NN_error_Y_0_2
-  - NN_error_Y_0_3
-  - NN_error_Y_0_4
-  - NN_error_Y_0_5
-  - NN_error_Y_0_6
-  - NN_error_Y_0_7
-  - NN_error_Y_0_8
-  - NN_error_Y_0_9
-  - NN_error_Y_0_10
-  - NN_error_Y_0_11
-  - NN_error_Y_0_12
-  - NN_error_Y_0_13
-  - NN_error_Y_0_14
-  - NN_error_Y_0_15
-  - NN_error_Y_0_16
-  - NN_error_Y_0_17
-  - NN_error_Y_0_18
-  - NN_error_Y_0_19
-  - NN_error_Y_0_20
-  - NN_error_Y_0_21
-  - NN_error_Y_0_22
-  - NN_error_Y_0_23
-  - NN_error_Y_0_24
-  - NN_error_Y_0_25
-  - NN_error_Y_0_26
-  - NN_error_Y_0_27
-  - NN_error_Y_0_28
-  - NN_error_Y_0_29
+  - NN_position_id_X_0
+  - NN_position_id_Y_0
 metadata:
   - RunNumber
   - EventNumber
@@ -116,7 +86,3 @@ metadata:
   - NN_pitches4
   - NN_pitches5
   - NN_pitches6
-  - NN_position_id_X_0
-  - NN_position_id_Y_0
-  - NN_position_id_X_0_pred
-  - NN_position_id_Y_0_pred
